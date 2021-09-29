@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+	<style type="text/css">
+
+		html{background: url(night2.gif); color:#8F8F8F; margin-top: 0px;font-family: 'Ephesis', cursive;}
+		.center { display: flex;  justify-content: center;}
+		#brave { color: #c63535; }
+		#cunning { color: #2e995e; }
+		#loyalty { color: #c79110; }
+		#wisdom { color: #1084c7; }
+		#stopBut {color: white; font-family: 'Ephesis', cursive;font-size: 48px; margin-bottom: 20px;}
+		#vol{ filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%); width: 200px; height: 2px; margin-bottom: 100px; }
+		button{background-color: black; border:0; outline: 0;}
+		p{color: white;font-family: 'Ephesis', cursive;font-size: 36px;}
+
+	</style>
+</head>
+<body>
+	<header class="center">
+	<h1>
+		<p class="center
+		">“ You're a wizard, Harry.”</p>
+		<img src="hogwart.jpg">
+
+
+	</h1>		
+	</header>
+
+
+	
+<div class="center">
+	<button id="beachBut">
+		<img src="grif.jpg">
+		<p id="brave">Brave</p>
+	</button>
+	<audio id="beachSnd" src="beach.mp3" ></audio>
+	<button id="rainBut">
+		<img src="sly.jpg">
+		<p id="cunning">Cunning</p>
+	</button>
+	<audio id="rainSnd" src="rain.mp3" ></audio>
+	<button id="snowfallBut">
+		<img src="huf.jpg">
+		<p id="loyalty">Loyalty</p>
+	</button>
+	<audio id="snowfallSnd" src="snowfall.mp3" ></audio>
+ 	<button id="flowerBut">
+ 		<img src="rev.jpg">
+ 		<p id="wisdom">Wisdom</p>
+ 	</button>
+	<audio id="flowerSnd" src="flower.mp3" ></audio>
+</div>
+<div class="center">
+
+	<button id="stopBut">stop</button>
+
+</div>
+
+<div class="center">
+	<input id="vol" type="range" max="100" min="0" value="100">
+</div>
+
+	<script type="text/javascript">
+
+		vol.oninput = function(){
+			beachSnd.volume = vol.value / 50; 
+			rainSnd.volume = vol.value / 50; 
+			snowfallSnd.volume = vol.value / 50; 
+			flowerSnd.volume = vol.value / 50; 
+		}
+
+		beachBut.onclick= function(){
+			beachSnd.play();
+		}
+		rainBut.onclick= function(){
+			rainSnd.play();
+		}
+		snowfallBut.onclick= function(){
+			snowfallSnd.play();
+		}
+		flowerBut.onclick= function(){
+			flowerSnd.play();
+		}
+
+
+		stopBut.onclick = function(){
+			beachSnd.pause();
+			rainSnd.pause();
+			snowfallSnd.pause();
+			flowerSnd.pause();
+		}
+
+
+	</script>
+</body>
+</html>
